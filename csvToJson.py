@@ -1,8 +1,8 @@
 import csv
 import json
 
-csvFilePath = "BSoup_3.csv"
-jsonFilePath = "BSoup_3.json"
+csvFilePath = "cnn_scraper.csv"
+jsonFilePath = "cnn_scraper.json"
 data = {}
 
 with open(csvFilePath) as csvFile:
