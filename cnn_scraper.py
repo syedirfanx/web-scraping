@@ -19,26 +19,27 @@ for para in soup.find_all('div', class_='metadata-header__top'):
     print()
 
 for para3 in soup.find_all('div', class_="cd__content"):
-    headline = para3.h3.a.text
-    print(headline)
-    link = para3.find('a')['href']
-    print(link)
-   
-    if link.split(':')[0] == 'https':
-        source2 = requests.get(link).text
-    else:
-        source2 = requests.get(f'https://edition.cnn.com{link}').text
-    soup2 = BeautifulSoup(source2, 'lxml')
+    try:
+        headline = para3.h3.a.text
+        print(headline)
+        link = para3.find('a')['href']
+        print(link)
     
-    for des in soup2.find_all('div', class_="pg-rail-tall__body"):
-        try:
-            description = des.text
-        except Exception as e:
-            pass
+        if link.split(':')[0] == 'https':
+            source2 = requests.get(link).text
+        else:
+            source2 = requests.get(f'https://edition.cnn.com{link}').text
+        soup2 = BeautifulSoup(source2, 'lxml')
 
-    print(description)
-    print()
-    csv_writer.writerow([catagory, headline, link, description]) 
+        for des in soup2.find_all('div', class_="pg-rail-tall__body"):
+            description = des.text
+            
+
+        print(description)
+        print()
+        csv_writer.writerow([catagory, headline, link, description])
+    except Exception as e:
+            pass 
 
 
 
