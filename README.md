@@ -1,2 +1,2 @@
-# web-scraping
-Python web scraping using beautiful soup and selenium.
+# Web Scraping
+Web Scraping using python library beautiful soup (bs4)
