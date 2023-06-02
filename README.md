@@ -1,2 +1,2 @@
 # Web Scraping
-Web Scraping using python library beautiful soup (bs4)
+This is a Python-based web scraper that extracts data from various news portals using the BeautifulSoup library. The scraped data is saved in both CSV and JSON file formats.
